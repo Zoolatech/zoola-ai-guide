@@ -257,7 +257,6 @@ When there is a conflict, follow the stricter rule:
 If the guide says "you can," read that as **"you can when the approved tool, tenant, policy, data class, and review owner allow it."**
 
 Anti-patterns:
-
 - Treating practical examples as approval to use real customer, employee, or regulated data
 - Assuming a public Claude feature is enabled or approved internally
 - Using this guide to bypass a required reviewer
