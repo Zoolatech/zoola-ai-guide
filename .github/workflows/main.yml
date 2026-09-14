@@ -1,0 +1,47 @@
+# .github/workflows/main.yml
+name: Publish docs to GCP GCS
+
+on:
+  push:
+    branches: [main]
+    paths: ["docs/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    env:
+      GCS: ${{ secrets.GCS_BUCKET }}
+      TOPIC: ${{ secrets.PUBSUB_TOPIC }}
+    steps:
+      - name: 'Checkout code'
+        id: checkout
+        uses: actions/checkout@v4
+
+      - name: 'GCP Auth'
+        id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          # = terraform output workload_identity_provider
+          workload_identity_provider: ${{ secrets.GCP_WIF_PROVIDER }}
+          service_account: ${{ secrets.GCP_GHA_SA }}
+
+      - name: "GCP gcloud setup"
+        id: gcloud
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: 'Sync Docs to GCS'
+        id: sync
+        run: |
+          set -euo pipefail
+          gcloud storage rsync docs/ gs://$GCS/ \
+            --recursive \
+            --delete-unmatched-destination-objects
+
+      - name: Kick an immediate sync
+        id: publish
+        run: gcloud pubsub topics publish "$TOPIC" --message="gh:$GITHUB_SHA"

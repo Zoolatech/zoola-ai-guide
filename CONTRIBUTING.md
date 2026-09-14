@@ -39,7 +39,7 @@ The guide's *Ownership and Maintenance* section defines the ownership model — 
 - **Keep the back-links.** Each top-level section starts with `[Back to Start Here](#start-here-pick-your-problem)`.
 - **Keep the front matter current.** The `Status`, `Audience`, and `Source check` lines at the top of the guide are part of the document's authority — update `Source check` when you verify links, model names, or product behavior.
 - **Do not use real data.** Examples must not contain real client, employee, or regulated data, even sanitized-looking fragments.
-- **Placeholders stay explicit.** Unfilled company specifics read `To be added`. Do not replace them with plausible-sounding guesses.
+- **Do not invent company specifics.** Where the guide defers to company policy or a named owner, keep the deferral. Do not fill it in with plausible-sounding guesses.
 
 ## Status labels
 

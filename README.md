@@ -39,21 +39,7 @@ The guide is currently marked **draft**. It is practical enablement material, no
 4. Tool or vendor terms
 5. This guide
 
-The **Company-Specific Rules** section (approved tools, tenants, data classes, approval owners) still contains `To be added` placeholders. Until those are filled in and approved, the guide grants no permission to use a specific tool, model, connector, or data class.
-
-## Publishing
-
-Pushing to `main` with changes under `docs/**` (or a manual `workflow_dispatch`) triggers `.github/workflows/main.yml`, which:
-
-1. Authenticates to GCP via Workload Identity Federation (no long-lived keys; the service account comes from the `GCP_GHA_SA` secret).
-2. Runs `gcloud storage rsync docs/ gs://gcp-eun-it-gcs-docs/ --recursive --delete-unmatched-destination-objects`.
-3. Publishes a message to the `gcp-eun-it-sync` Pub/Sub topic to trigger an immediate downstream sync.
-
-Notes:
-
-- The sync is **mirroring** — files removed from `docs/` are deleted from the bucket.
-- Only `docs/` is published. This README and other root files stay in the repo.
-- Project: `it-monitoring-245619` · Region: `europe-north1`.
+The **Company-Specific Rules** section points at company policy rather than restating it. The guide itself grants no permission to use a specific tool, model, connector, or data class — that comes from policy and the named owners.
 
 ## Contributing
 

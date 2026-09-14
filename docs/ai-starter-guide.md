@@ -631,23 +631,13 @@ Open-source security tools that may be useful in approved workflows:
 
 [Back to Start Here](#start-here-pick-your-problem)
 
-This section is the place for company-specific AI rules. Until these details are filled in and approved, treat the guide as general guidance, not as permission to use a specific tool, tenant, model, connector, plugin, or data class.
+This section points at the company-specific AI rules; it does not restate them. Treat this guide as general guidance, not as permission to use a specific tool, tenant, model, connector, plugin, or data class.
 
 > **Company rule of thumb:** use only approved AI tools, in approved accounts or tenants, for approved data classes, with the required human review.
 
 ### Approved AI Tools And Surfaces
 
-Fill in the current company-approved options.
-
-| Tool or surface | Approved for | Not approved for | Owner | Notes |
-| --- | --- | --- | --- | --- |
-| Company Claude tenant | To be added | To be added | To be added | To be added |
-| Claude Code | To be added | To be added | To be added | To be added |
-| Claude Cowork | To be added | To be added | To be added | To be added |
-| Codex or other coding agents | To be added | To be added | To be added | To be added |
-| Internal AI gateway or platform | To be added | To be added | To be added | To be added |
-| Personal AI accounts | To be added | To be added | To be added | To be added |
-| Client-provided AI environments | To be added | To be added | To be added | To be added |
+The approved tool list is maintained by the tooling and integrations owner, outside this guide.
 
 Minimum rule:
 
@@ -657,19 +647,9 @@ Minimum rule:
 
 ### Data Classification Rules
 
-Fill in the company's data classifications and examples.
+Data classifications and their handling rules come from company policy. Check policy before prompting.
 
-| Data type | Example | Can it be used in approved AI tools? | Required handling | Required reviewer |
-| --- | --- | --- | --- | --- |
-| Public information | To be added | To be added | To be added | To be added |
-| Internal business information | To be added | To be added | To be added | To be added |
-| Confidential company information | To be added | To be added | To be added | To be added |
-| Client confidential information | To be added | To be added | To be added | To be added |
-| Employee or candidate personal data | To be added | To be added | To be added | To be added |
-| Financial, legal, security, or regulated data | To be added | To be added | To be added | To be added |
-| Secrets, credentials, keys, or tokens | To be added | To be added | To be added | To be added |
-
-Default rules until the table is filled:
+Default rules:
 
 - Do not paste secrets, credentials, tokens, private keys, or `.env` files into AI.
 - Do not put client confidential data into a non-client-approved environment.
@@ -679,19 +659,9 @@ Default rules until the table is filled:
 
 ### Approved Models, Tenants, And Accounts
 
-Fill in the model and tenant rules that apply to the company rollout.
+Model, tenant, and account rules are set by the company rollout.
 
-| Item | Approved options | Restrictions | Owner |
-| --- | --- | --- | --- |
-| Company tenant or workspace | To be added | To be added | To be added |
-| Client tenant or workspace | To be added | To be added | To be added |
-| Model families or aliases | To be added | To be added | To be added |
-| API access | To be added | To be added | To be added |
-| Browser, desktop, IDE, or CLI surfaces | To be added | To be added | To be added |
-| Connectors or integrations | To be added | To be added | To be added |
-| Logging, retention, or monitoring settings | To be added | To be added | To be added |
-
-Questions this table should answer:
+Questions to resolve with the rollout owner before using a tool for work:
 
 - Which tenant should employees use for normal company work?
 - Which tenant should be used for client work, if any?
@@ -702,24 +672,11 @@ Questions this table should answer:
 
 ### Approval And Escalation Owners
 
-Fill in the owners coworkers should contact before using AI in unclear or sensitive situations.
-
-| Situation | Ask before using AI | Required reviewer before output is used |
-| --- | --- | --- |
-| Client confidential data | To be added | To be added |
-| Employee, candidate, HR, or compensation data | To be added | To be added |
-| Legal, compliance, or contract language | To be added | To be added |
-| Security findings, vulnerability data, or credentials | To be added | To be added |
-| Financial analysis or external reporting | To be added | To be added |
-| Customer-facing commitments | To be added | To be added |
-| New connector, MCP server, plugin, hook, or automation | To be added | To be added |
-| External open-source resource | To be added | To be added |
+See [Escalation Rules](#escalation-rules) for when to escalate and what to bring. Who to escalate to is defined by the company rollout, not by this guide.
 
 ### Required Disclosures And Review
 
-Fill in when coworkers must disclose AI assistance or request review.
-
-At minimum, define rules for:
+Disclosure and review rules are set by company, client, legal, and publication policy. They should cover at least:
 
 - Client-facing materials
 - External publication
@@ -2365,13 +2322,7 @@ If the resource can read files, run code, connect to systems, call APIs, change 
 
 ### Approval Status
 
-Fill in approved resources here after review.
-
-| Resource | Type | Approved scope | Restrictions | Owner | Review date |
-| --- | --- | --- | --- | --- | --- |
-| To be added | Skill / plugin / hook / MCP / agent / package / other | To be added | To be added | To be added | To be added |
-| To be added | Skill / plugin / hook / MCP / agent / package / other | To be added | To be added | To be added | To be added |
-| To be added | Skill / plugin / hook / MCP / agent / package / other | To be added | To be added | To be added | To be added |
+No external resource is approved for work use until the tooling and integrations owner has reviewed it. Treat an unreviewed resource as unapproved.
 
 Approval should be scoped. A resource may be approved for:
 
